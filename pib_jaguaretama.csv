@@ -1,0 +1,38 @@
+Nível;Indicador;1999;2000;2001;2002;2003;2004;2005;2006;2007;2008;2009;2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021;2022;2023;Unidade
+1;PIB a preços correntes;;;;;;;;;;;;;;;;;;;;;;;;;;
+1.1;Série revisada;;;;;;;;;;;;82526;101150;94279;107965;129820.32;136630.59;141989.97;149930.89;156217.41;170402.619;205399.023;226643.899;257163.179;316966.522;R$
+1.2;Série retropolada;;;;40864;47049;45501;52448;61805;60757;74787;80312;;;;;;;;;;;;;;;R$
+1.3;Série encerrada;31903;35086;34338;43954;51048;51267;56043;62693;67427;82656;82712;89864;105684;96020;;;;;;;;;;;;R$
+2;PIB per capita;;;;;;;;;;;;;;;;;;;;;;;;;;
+2.1;Série revisada;;;;;;;;;;;;4618.88;5666.36;5284.98;5984.73;7205.03;7591.85;7898.42;8348.97;8629.84;9382.37;11318.62;12498.97;14923.58;18394.06;R$
+2.2;Série encerrada;;;;;;;;;;;;;;5382.58;;;;;;;;;;;;R$
+3;Valor adicionado bruto a preços correntes;;;;;;;;;;;;;;;;;;;;;;;;;;
+3.1;Série revisada;;;;;;;;;;;;79055;97545;89987;103283;124590.25;129326.14;135000.51;142341.10;148361.99;161788.107;196010.99;215322.877;;;R$
+3.1.1;Atividade econômica;;;;;;;;;;;;;;;;;;;;;;;;;;
+3.1.1.1;Agropecuária;;;;;;;;;;;;19215;30384;20260;22055;26115.23;25818.58;28688.82;28014.06;31039.84;34189.648;56098.798;70781.83;;;R$
+3.1.1.2;Indústria;;;;;;;;;;;;5810;6802;5112;4604;5772.56;6725.16;6607.69;6499.93;6819.93;7307.988;10401.063;10077.678;;;R$
+3.1.1.3;Serviços - Exclusive Administração, defesa, educação e saúde públicas e seguridade social;;;;;;;;;;;;18933;22725;24763;29923;37685.70;39833.28;41243.40;46057.83;46417.73;51800.865;56229.532;56204.985;;;R$
+3.1.1.4;Administração, defesa, educação e saúde públicas e seguridade social;;;;;;;;;;;;35097;37634;39852;46702;55016.76;56949.13;58460.61;61769.28;64084.50;68489.606;73281.598;78258.384;;;R$
+3.2;Série retropolada;;;;39814;45923;44038;50829;59958;58876;72758;78328;;;;;;;;;;;;;;;R$
+3.2.1;Atividade econômica;;;;;;;;;;;;;;;;;;;;;;;;;;
+3.2.1.1;Agropecuária;;;;15957;20687;17969;18113;23703;20221;28158;26663;;;;;;;;;;;;;;;R$
+3.2.1.2;Indústria;;;;1916;1802;1700;3314;3307;2713;4028;3838;;;;;;;;;;;;;;;R$
+3.2.1.3;Serviços - Exclusive Administração, defesa, educação e saúde públicas e seguridade social;;;;6788;7598;8174;9885;10857;11712;12946;14928;;;;;;;;;;;;;;;R$
+3.2.1.4;Administração, defesa, educação e saúde públicas e seguridade social;;;;15154;15836;16195;19517;22091;24230;27625;32899;;;;;;;;;;;;;;;R$
+3.3;Série encerrada;;;;;;;;;;;;;;;;;;;;;;;;;;
+3.3.1;Atividade econômica;;;;;;;;;;;;;;;;;;;;;;;;;;
+3.3.1.1;Agropecuária;14764;16931;13536;18400;23948;20980;20048;24244;24614;33246;27116;23660;30151;20407;;;;;;;;;;;;R$
+3.3.1.2;Indústria;1977;1812;2494;3063;2955;3483;3938;4782;5601;6545;7375;8619;9281;9927;;;;;;;;;;;;R$
+3.3.1.3;Serviços;14662;15872;17632;21612;23081;25368;30414;31882;35241;40679;45870;54679;63211;62080;;;;;;;;;;;;R$
+4;Impostos, líquidos de subsídios, sobre produtos, a preços correntes;;;;;;;;;;;;;;;;;;;;;;;;;;
+4.1;Série revisada;;;;;;;;;;;;3471;3605;4291;4681;5230.08;7304.45;6989.46;7589.79;7855.41;8614.512;9388.033;11321.022;;;R$
+4.2;Série retropolada;;;;1049;1126;1463;1619;1847;1882;2029;1984;;;;;;;;;;;;;;;R$
+4.3;Série encerrada;500;470;675;878;1063;1436;1643;1785;1972;2186;2352;2906;3041;3606;;;;;;;;;;;;R$
+
+
+Nota: Para os anos de 2022 e 2023, foram divulgados apenas o Produto Interno Bruto e o Produto Interno Bruto per capita, conforme nota técnica 02/2024 do Sistema de Contas Nacionais, acessível em https://biblioteca.ibge.gov.br/visualizacao/livros/liv102094.pdf
+Nota: O cálculo do Produto Interno Bruto per capita dos anos de 2002 a 2021 considerou a população residente da Estatística Estimativa da População, estimativa por município, com data de referência em 1º de julho de cada ano, enviada ao Tribunal de Contas da União - TCU. Em virtude da indisponibilidade da Estatística Estimativa da População para os anos de 2022 e 2023, foi utilizada a população do Censo Demográfico 2022. Para o ano de 2022, foi utilizada a primeira apuração do Censo Demográfico 2022; e para 2023, a Relação da População dos Municípios enviada ao TCU em 2023 com atualizações de limites territoriais que tenham sido comunicadas ao IBGE entre 1 de agosto de 2022 e 30 de abril de 2023, no âmbito dos acordos de cooperação técnica mantidos com órgãos estaduais, visando à consolidação dos limites.
+Nota: Os dados de 2022 e 2023 estão sujeitos a revisão na próxima publicação
+Nota: Os dados da série revisada têm como referência o ano de 2010, seguindo a nova referência das Contas Nacionais.
+
+Fonte: IBGE, em parceria com os Órgãos Estaduais de Estatística, Secretarias Estaduais de Governo e Superintendência da Zona Franca de Manaus - SUFRAMA
