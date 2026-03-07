@@ -260,8 +260,18 @@ cagr_filtrado = (
 # ============================================================
 def gerar_contexto():
     return f"""
-Você é um economista especialista em desenvolvimento regional do Brasil.
-Analise os dados do PIB de Jaguaretama/CE (IBGE). Período: {ano_inicio}–{ano_fim}.
+Você é um assistente de análise de dados.
+
+IMPORTANTE:
+Responda SOMENTE usando os dados fornecidos abaixo.
+Não utilize conhecimento externo.
+Não invente informações.
+
+Se a pergunta não puder ser respondida com os dados disponíveis,
+responda exatamente:
+"Não há dados suficientes no CSV para responder."
+
+DADOS DISPONÍVEIS:
 
 === PIB TOTAL (R$ mil) ===
 {df_total_f.to_string(index=False)}
@@ -274,11 +284,10 @@ Analise os dados do PIB de Jaguaretama/CE (IBGE). Período: {ano_inicio}–{ano_
 
 === INDICADORES ===
 - CAGR {ano_inicio}–{ano_fim}: {cagr_filtrado:.2f}%
-- PIB Total {ano_fim}: R$ {pib_ultimo:,.0f} mil
+- PIB Total {ano_fim}: R$ {pib_ultimo:,.0f}
 - PIB per Capita {ano_fim}: R$ {pib_pc_ultimo:,.2f}
-- Variação per Capita: R$ {variacao_pc:,.0f} ({variacao_pct:.1f}%)
 
-Responda em português, de forma clara e objetiva.
+Responda em português de forma clara e objetiva.
 """
 
 if send_clicked and user_question.strip():
@@ -289,13 +298,12 @@ if send_clicked and user_question.strip():
             raise ValueError("Chave OPENAI_API_KEY não encontrada em st.secrets nem em variável de ambiente.")
         _client = OpenAI(api_key=_chave)
         response = _client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[
-                {"role": "system", "content": gerar_contexto()},
-                *[{"role": m["role"], "content": m["content"]}
-                  for m in st.session_state.chat_messages]
-            ],
-            temperature=0.3
+        model="gpt-4o-mini",
+        messages=[
+        {"role": "system", "content": gerar_contexto()},
+        {"role": "user", "content": user_question}
+    ],
+            temperature=0.2
         )
         resposta = response.choices[0].message.content
     except Exception as e:
