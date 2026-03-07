@@ -557,6 +557,63 @@ with aba3:
 
 st.divider()
 
+# ============================================================
+# ANÁLISE: CHUVAS x PIB AGROPECUÁRIO
+# ============================================================
+st.subheader("Chuvas x PIB Agropecuario (2010-2020)")
+st.markdown("Correlacao entre a pluviometria anual (posto FUNCEME 72) e o PIB agropecuario. Evidencia como as secas impactam diretamente a economia municipal.")
+
+try:
+    import numpy as np
+
+    anos_chuva = list(range(2010, 2021))
+    agro = [19215, 30384, 20260, 22055, 26115.23, 25818.58, 28688.82, 28014.06, 31039.84, 34189.648, 56098.798]
+
+    df_chuva = pd.read_csv("PluviometriaFuncemeNormalizada_2026-03-07T20_10_09.csv", sep=";")
+    df_chuva["data"] = pd.to_datetime(df_chuva["data"])
+    df_chuva["ano"] = df_chuva["data"].dt.year
+    chuva_anual = df_chuva.groupby("ano")["valor"].sum()
+    chuva = [chuva_anual[a] for a in anos_chuva]
+
+    fig_c, ax_c1 = plt.subplots(figsize=(10, 4))
+    fig_c.patch.set_facecolor("#f0f4f8")
+    ax_c1.set_facecolor("#f0f4f8")
+
+    ax_c1.bar(anos_chuva, chuva, color="#2563a8", alpha=0.35, width=0.6, label="Chuva Anual (mm)", zorder=2)
+    ax_c1.set_xlabel("Ano", fontsize=9, color="#555")
+    ax_c1.set_ylabel("Chuva (mm)", fontsize=9, color="#2563a8")
+    ax_c1.tick_params(axis="y", labelcolor="#2563a8", labelsize=8)
+    ax_c1.tick_params(axis="x", labelsize=8)
+    ax_c1.set_ylim(0, max(chuva) * 1.15)
+    ax_c1.axhline(np.mean(chuva), color="#2563a8", linestyle="--", linewidth=1, alpha=0.6)
+
+    ax_c2 = ax_c1.twinx()
+    ax_c2.set_facecolor("#f0f4f8")
+    ax_c2.plot(anos_chuva, [a/1000 for a in agro], color="#27ae60", linewidth=2, marker="o", markersize=5, zorder=5)
+    ax_c2.fill_between(anos_chuva, [a/1000 for a in agro], alpha=0.08, color="#27ae60")
+    ax_c2.set_ylabel("PIB Agro (R$ mil)", fontsize=9, color="#27ae60")
+    ax_c2.tick_params(axis="y", labelcolor="#27ae60", labelsize=8)
+
+    ax_c2.text(2012, 20260/1000 + 1, "Seca -33%", fontsize=7, color="#e74c3c", fontweight="bold", ha="center")
+    ax_c2.text(2020, 56098/1000 + 1, "+64% chuvas", fontsize=7, color="#27ae60", fontweight="bold", ha="center")
+
+    lines1 = plt.Rectangle((0,0),1,1, color="#2563a8", alpha=0.35)
+    lines2, = ax_c2.plot([], [], color="#27ae60", linewidth=2, marker="o", markersize=5)
+    ax_c1.legend([lines1, lines2], ["Chuva Anual (mm)", "PIB Agropecuario (R$ mil)"],
+                 loc="upper left", fontsize=7.5, frameon=True, facecolor="white")
+
+    plt.title("Chuvas x PIB Agropecuario - Jaguaretama/CE (2010-2020)",
+              fontsize=10, fontweight="bold", color="#1a3c5e", pad=10)
+    ax_c1.set_xticks(anos_chuva)
+    ax_c1.grid(axis="y", color="#e2e8f0", linewidth=0.8, linestyle="--", zorder=1)
+    ax_c1.spines["top"].set_visible(False)
+    ax_c2.spines["top"].set_visible(False)
+    plt.tight_layout()
+    st.pyplot(fig_c)
+
+except FileNotFoundError:
+    st.warning("Arquivo de chuvas nao encontrado. Adicione o CSV da FUNCEME na pasta do projeto.")
+
 
 # ============================================================
 # EXPORTAR EXCEL
